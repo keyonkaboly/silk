@@ -4,7 +4,7 @@
 
 defaulttab::defaulttab(QWidget *parent) : QWidget(parent)
 {
-    //creates web browser view and sets the parent to "this"
+    // creates web browser view and sets the parent to "this"
     m_webView = new QWebEngineView(this);
     
     // loading the default tab page. For now it's google. Later on switch to silk site or smthn.

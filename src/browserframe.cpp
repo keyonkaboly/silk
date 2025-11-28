@@ -12,7 +12,8 @@
 browserframe::browserframe(QWidget *parent) : QMainWindow(parent)
 {
     setupTabs();
-    
+    // screen sizes takes up my 14 inch laptop.
+    // for long run find a screenFit QT cmd (CHANGE LATER)
     resize(2000, 1400);
     setWindowTitle("silk");
 }
@@ -20,24 +21,25 @@ browserframe::browserframe(QWidget *parent) : QMainWindow(parent)
 void browserframe::setupTabs()
 {
     m_tabWidget = new QTabWidget(this);
-    m_tabWidget->setTabsClosable(false); // We'll use custom close buttons
+    // custom close tab buttons being used
+    m_tabWidget->setTabsClosable(false);
     m_tabWidget->setMovable(true);
     
-    // Get the tab bar
+    // get the tab bar
     QTabBar *tabBar = m_tabWidget->tabBar();
     
-    // Style the tab bar to remove default close button styling
+    // remove tab bar default close button X
     tabBar->setStyleSheet(
         "QTabBar::close-button {"
         "    image: none;"
         "}"
     );
     
-    // Connect signals
+    // connect signals, tab moved, current tab changed
     connect(m_tabWidget, &QTabWidget::currentChanged, this, &browserframe::onTabChanged);
     connect(tabBar, &QTabBar::tabMoved, [this]() {
         updateAddButtonPosition();
-        // Re-setup all close buttons after move
+        // re setup all close buttons after move
         for (int i = 0; i < m_tabWidget->count(); ++i) {
             setupTabCloseButton(i);
         }
