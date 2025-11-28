@@ -1,0 +1,5 @@
+/home/keyon/Documents/Silk/build/CMakeFiles/Silk.dir
+/home/keyon/Documents/Silk/build/CMakeFiles/edit_cache.dir
+/home/keyon/Documents/Silk/build/CMakeFiles/rebuild_cache.dir
+/home/keyon/Documents/Silk/build/CMakeFiles/Silk_autogen_timestamp_deps.dir
+/home/keyon/Documents/Silk/build/CMakeFiles/Silk_autogen.dir
